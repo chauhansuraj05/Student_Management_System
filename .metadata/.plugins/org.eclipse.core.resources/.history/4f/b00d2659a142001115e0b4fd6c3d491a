@@ -1,0 +1,79 @@
+package sms;
+
+import java.util.*;
+
+public class StudentManagementSystem {
+      public static void main(String[] args) {
+		  Scanner sc = new Scanner(System.in);
+		  StudentService service = new StudentService();
+		  
+		  while(true) {
+			  try {
+				    System.out.println("\n--- Student Management System ---");
+	                System.out.println("1. Add Student");
+	                System.out.println("2. View Students");
+	                System.out.println("3. Update Student");
+	                System.out.println("4. Delete Student");
+	                System.out.println("5. Exit");
+	                System.out.print("Enter choice: ");
+	                
+	                int choice = sc.nextInt();
+	                sc.nextLine();	
+	                
+	                switch(choice) {
+	                
+	                  case 1:
+	                	  System.out.println("ENTER ID: ");
+	                	  int id = sc.nextInt();
+	                	  sc.nextLine();
+	                	  
+	                	  System.out.println("ENTER NAME: ");
+	                	  String name = sc.nextLine();
+	                	  
+	                	  System.out.println("ENTER AGE: ");
+	                	  int age = sc.nextInt();
+	                	  
+	                	  service.addStudent(id, name, age);
+	                	  break;
+	                	  
+	                  case 2:
+	                	  service.viewStudent();
+	                	  break;
+	                	  
+	                  case 3:
+	                	  System.out.println("ENTER ID: ");
+	                	 id = sc.nextInt();
+	                	  sc.nextLine();
+	                	  
+	                	  System.out.println("ENTER NAME: ");
+	                	  name = sc.nextLine();
+	                	  
+	                	  System.out.println("ENTER AGE: ");
+	                	  age = sc.nextInt();
+	                	  
+	                	  service.updateStudent(id, name, age);
+	                	  break;
+	                	  
+	                  case 4:
+	                	  System.out.println();
+	                	  id = sc.nextInt();
+	                	  
+	                	  service.deleteStudent(id);
+	                	  break;
+	                	  
+	                  case 5:
+                          System.out.println("Exiting.....");
+                          
+                      default:
+                    	  System.out.println("Invalid choice!");
+	                }	                	 
+	                
+	                
+			  }catch(InputMismatchException  e) {
+				  System.out.println("Invalid Input, Please enter correct values");
+				  sc.nextLine();
+			  }
+		  }
+    	  
+	}
+}

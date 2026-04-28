@@ -1,0 +1,31 @@
+package sms;
+
+import java.util.*;
+
+public class StudentManagementSystem {
+      public static void main(String[] args) {
+		  Scanner sc = new Scanner(System.in);
+		  StudentService service = new StudentService();
+		  
+		  while(true) {
+			  try {
+				    System.out.println("\n--- Student Management System ---");
+	                System.out.println("1. Add Student");
+	                System.out.println("2. View Students");
+	                System.out.println("3. Update Student");
+	                System.out.println("4. Delete Student");
+	                System.out.println("5. Exit");
+	                System.out.print("Enter choice: ");
+	                
+	                int choice = sc.nextInt();
+	                sc.nextLine();		
+	                
+	                
+			  }catch(InputMismatchException  e) {
+				  System.out.println("Invalid Input, Please enter correct values");
+				  sc.nextLine();
+			  }
+		  }
+    	  
+	}
+}

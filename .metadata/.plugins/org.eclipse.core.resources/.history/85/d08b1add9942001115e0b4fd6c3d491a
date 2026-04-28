@@ -1,0 +1,19 @@
+package sms;
+
+import java.util.*;
+
+public class StudentService {
+    
+	private Map<Integer, Student> studentMap = new HashMap<>();
+	
+	public void addStudent(int id, String name ,int age) {
+		
+		if(studentMap.containsKey(id)) {
+			System.out.println("Stdent id is already Exists");
+	      return;
+		}
+		
+		studentMap.put(id, new Student(id, name, age));
+		System.out.println("Student Created Succesfully");
+	}
+}
